@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import UserPageContainer from './containers/UserPageContainer'
 import store from './store'
 import { Provider } from 'react-redux'
-import { addLeagueName, getApiLeagueName } from './actions/actionCreators'
+import { getApiLeagueName } from './actions/actionCreators'
 store.dispatch(getApiLeagueName())
 
 window.addEventListener('load', function () {

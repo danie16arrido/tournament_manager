@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 
 const UserHeaderContainer = ( props ) => {
     return(
-      <div id="user-header"> { props.league_name }</div>
+      <div id="user-header"> { props.leagueName }  {props.leagueID}</div>
     )
 }
 
 const mapStateToProps = state =>{
   return {
-    league_name: state.league_name
+    leagueName: state.league_name,
+    leagueID: state.league_id
   }
 }
 

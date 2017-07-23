@@ -1,29 +1,16 @@
 import React from 'react';
-import store from '../store';
-import { addLeagueName } from '../actions/actionCreators'
+import { connect } from 'react-redux'
 
-class UserHeaderContainer extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      league_name: ""
-    }
-    store.subscribe(() => {
-      this.setState({
-        league_name: store.getState().league_name
-      })
-    })
-  }
-  
-  componentDidMount(){
-    store.dispatch( addLeagueName("DanielGarrido") )
-  }
-
-  render(){
+const UserHeaderContainer = ( props ) => {
     return(
-      <div id="user-header"> { this.state.league_name }</div>
+      <div id="user-header"> { props.league_name }</div>
     )
+}
+
+const mapStateToProps = state =>{
+  return {
+    league_name: state.league_name
   }
 }
 
-export default UserHeaderContainer;
+export default connect( mapStateToProps )(UserHeaderContainer);

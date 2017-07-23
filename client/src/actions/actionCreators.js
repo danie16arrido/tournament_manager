@@ -5,4 +5,12 @@ const addLeagueName = leagueName => {
       }
 }
 
-export { addLeagueName }
+const getApiLeagueName = leagueName => {
+  const apiName = "API_HERE"
+  return {
+        type: "API_LEAGUE_NAME",
+        league_name: apiName
+      }
+}
+
+export { addLeagueName, getApiLeagueName }

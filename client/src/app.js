@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import UserPageContainer from './containers/UserPageContainer'
 
 window.addEventListener('load', function () {
   ReactDOM.render(
-    <h1>App Started on Node.js</h1>,
+    <UserPageContainer id="user-page-container"/>,
     document.getElementById('app')
   );
 });

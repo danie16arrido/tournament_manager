@@ -5,11 +5,16 @@ const reducer = ( state, action ) => {
  if(action.type === "API_LEAGUE_NAME"){
     return {
       ...state,
-      league_name: action.league_name,
-      league_id: action.league_id
+      league_name: action.league_name
+    }
+  }else if(action.type === "API_LEAGUE_MATCHES"){
+    return {
+      ...state,
+      league_matches: action.league_matches
     }
   }
+
   return state;
 }
 
-export default createStore( reducer, { league_name: "" }, applyMiddleware( thunk ));
+export default createStore( reducer, { league_matches: [] }, applyMiddleware( thunk ));

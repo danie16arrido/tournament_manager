@@ -11,7 +11,7 @@ class UserPageContainer extends React.Component {
     return(
       <div id="user-page-container">
         <UserHeaderContainer/>
-        <UserDataContainer></UserDataContainer>
+        <UserDataContainer key="something"></UserDataContainer>
       </div>
     )
   } 

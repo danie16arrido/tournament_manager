@@ -1,15 +1,29 @@
 import axios from 'axios'
 const apiServer = "http://localhost:9100/api/v1"
-
-const getApiLeagueName = leagueName => {
+const leagueID = 9
+const getApiLeagueName = leagueID => {
   return dispatch => {
-    return axios.get( apiServer + "/leagues/3")
+    return axios.get( apiServer + "/leagues/" + leagueID)
       .then( response => {
         dispatch(
           {
           type: "API_LEAGUE_NAME",
-          league_name: response.data.name,
-          league_id: response.data.id
+          league_name: response.data.name
+          }
+        )
+      }
+    )
+  }
+}
+
+const getApiLeagueData = leagueID => {
+  return dispatch => {
+    return axios.get( apiServer + "/leagues/" + leagueID)
+      .then( response => {
+        dispatch(
+          {
+          type: "API_LEAGUE_MATCHES",
+          league_matches: response.data.matches 
           }
         )
       }
@@ -18,4 +32,4 @@ const getApiLeagueName = leagueName => {
 }
 
 
-export { getApiLeagueName }
+export { getApiLeagueData, getApiLeagueName }

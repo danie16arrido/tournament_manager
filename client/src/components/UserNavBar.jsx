@@ -7,7 +7,9 @@ class UserNavBar extends React.Component {
 
   render() {
     return(
-      <div id="user-nav-bar">navbar</div>
+      <div id="user-nav-bar">
+        <div id="user-nav-bar1" >navbar</div>
+      </div>
     )
   }
 }

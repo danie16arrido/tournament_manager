@@ -5,7 +5,6 @@ import UserDataDisplay from '../components/UserDataDisplay'
 const UserDataContainer = () => {
     return(
       <div id="user-data-container">
-        <UserNavBar></UserNavBar>
         <UserDataDisplay></UserDataDisplay>
       </div>
     ) 

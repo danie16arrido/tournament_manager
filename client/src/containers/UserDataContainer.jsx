@@ -1,5 +1,4 @@
 import React from 'react';
-import UserNavBar from '../components/UserNavBar';
 import UserDataDisplay from '../components/UserDataDisplay'
 
 const UserDataContainer = () => {

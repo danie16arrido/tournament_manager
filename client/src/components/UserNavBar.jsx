@@ -1,17 +1,20 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class UserNavBar extends React.Component {
-  constructor(){
-    super()
-  }
-
   render() {
     return(
       <div id="user-nav-bar">
-        <div id="user-nav-bar1" >navbar</div>
+        <ul>
+          <li><Link to="/matches">Matches</Link></li>
+          <li><Link to="/table">Table</Link></li>
+          <li><Link to="/stats">Stats</Link></li>
+        </ul>    
       </div>
     )
   }
 }
 
 export default UserNavBar;
+
+

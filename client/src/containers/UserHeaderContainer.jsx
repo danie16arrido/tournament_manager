@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import UserNavBar from '../components/UserNavBar';
-
-
+import LeagueName from '../components/LeagueName'
+import LeagueLogo from '../components/LeagueLogo'
 const UserHeaderContainer = ( props ) => {
-  
+
     return(
       <div> 
-        <img src="http://si-www-footballmanager-com-shared.s3.amazonaws.com/styles/homepage_logos/s3/games/logos/fm17_logo.png?itok=R1KXJbAn" height="50" alt=""/>
-        <div id="user-header">{ props.leagueName }</div>
+        <LeagueLogo></LeagueLogo>
+        <LeagueName></LeagueName>
         <UserNavBar></UserNavBar> 
       </div> 
     )

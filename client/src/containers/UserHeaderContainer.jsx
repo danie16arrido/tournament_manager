@@ -6,7 +6,7 @@ import LeagueLogo from '../components/LeagueLogo'
 const UserHeaderContainer = ( props ) => {
 
     return(
-      <div> 
+      <div style={{padding:20}}> 
         <LeagueLogo></LeagueLogo>
         <LeagueName></LeagueName>
         <UserNavBar></UserNavBar> 

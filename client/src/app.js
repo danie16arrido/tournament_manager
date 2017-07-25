@@ -17,8 +17,31 @@ import { getApiLeagueData, getApiLeagueName } from './actions/actionCreators'
 store.dispatch(getApiLeagueName(leagueID))
 store.dispatch(getApiLeagueData(leagueID))
 
-window.addEventListener('load', function () {
-  ReactDOM.render(
+
+
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
+import {orange500, deepOrange500} from 'material-ui/styles/colors';
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: orange500,
+    accent1Color: deepOrange500,
+  },
+  appBar: {
+    height: 80,
+  },
+});
+
+const App = () => (
+  <MuiThemeProvider muiTheme={muiTheme}>
     <Provider store={ store }>
       <HashRouter >
         <div>
@@ -29,7 +52,12 @@ window.addEventListener('load', function () {
         <Route path="/stats" component={StatsContainer} />
         </div>
       </HashRouter>
-    </Provider>,
+    </Provider>
+  </MuiThemeProvider>
+);
+window.addEventListener('load', function () {
+  ReactDOM.render(
+    <App/>,
     document.getElementById('app')
   );
 });

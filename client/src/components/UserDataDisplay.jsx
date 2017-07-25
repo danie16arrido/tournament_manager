@@ -2,23 +2,43 @@ import React from 'react';
 import store from '../store'
 import { connect } from 'react-redux'
 
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
+
 const UserDataDisplay = ( props ) => {
     return(
-      <div id="user-data-display">
-        {props.matches.map( function( match, index ){
-          return <div key={index}>
-            Home:{match.home.name}  
-            Away: {match.away.name}
-            Date: {match.date}
-            Time: {match.time.slice(11,16)}
-          </div>
+      <Table >
+          <TableHeader>
+            <TableRow>
+              <TableHeaderColumn>Date</TableHeaderColumn>
+              <TableHeaderColumn>Time</TableHeaderColumn>
+              <TableHeaderColumn>Home</TableHeaderColumn>
+              <TableHeaderColumn>Away</TableHeaderColumn>
+              <TableHeaderColumn>Venue</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+          {props.matches.map( function( match, index ){
+          return <TableRow key={index}>
+                  
+                  <TableRowColumn> {match.date}</TableRowColumn>
+                  <TableRowColumn>{match.time.slice(11,16)}</TableRowColumn>
+                  <TableRowColumn>{match.home.name}</TableRowColumn>
+                  <TableRowColumn>{match.away.name}</TableRowColumn>
+                  <TableRowColumn>Location{index}</TableRowColumn>          
+                </TableRow>
         })}
-      </div>
+          </TableBody>
+        </Table>
     )
 }
-
-
-
+  
 const mapStateToProps = state =>{
   return {
     matches: state.league_matches

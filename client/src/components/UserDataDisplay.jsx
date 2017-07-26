@@ -38,7 +38,7 @@ const UserDataDisplay = ( props ) => {
           <TableBody>
           {props.matches.map( function( match, index ){
           return <TableRow key={index}>
-
+      
                   <TableRowColumn> {match.date}</TableRowColumn>
                   <TableRowColumn>{match.time.slice(11,16)}</TableRowColumn>
                   <TableRowColumn ><Link to="team" onClick={() => {props.getApiTeamData(match.home.id)}}>{match.home.name}</Link></TableRowColumn>

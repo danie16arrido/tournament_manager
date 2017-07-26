@@ -7,7 +7,6 @@ const UserHeaderContainer = ( props ) => {
 
     return(
       <div style={{padding:20}}> 
-        <LeagueLogo></LeagueLogo>
         <LeagueName></LeagueName>
         <UserNavBar></UserNavBar> 
       </div> 

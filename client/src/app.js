@@ -5,7 +5,8 @@ import StatsContainer from './containers/StatsContainer'
 import TableContainer from './containers/TableContainer'
 import UserHeaderContainer from './containers/UserHeaderContainer'
 import UserHeaderDataContainer from './containers/UserDataContainer'
-
+import TeamContainer from './containers/TeamContainer'
+import LocationContainer from './containers/LocationContainer'
 
 import store from './store'
 import { Provider } from 'react-redux'
@@ -29,7 +30,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
-
+// const muiTheme = getMuiTheme({})
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: orange500,
@@ -50,6 +51,8 @@ const App = () => (
         <Route path="/matches" component={UserHeaderDataContainer} />
         <Route path="/table" component={TableContainer} />
         <Route path="/stats" component={StatsContainer} />
+        <Route name="team" path="/team" component={TeamContainer} />
+        <Route name="location" path="/location" component={LocationContainer} />
         </div>
       </HashRouter>
     </Provider>

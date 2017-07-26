@@ -31,5 +31,34 @@ const getApiLeagueData = leagueID => {
   }
 }
 
+const getApiTeamData = teamID => {
+  return dispatch => {
+    return axios.get( apiServer + "/teams/" + teamID)
+      .then( response => {
+        dispatch(
+          {
+          type: "API_TEAM_DATA",
+          team_data: response.data
+          }
+        )
+      }
+    )
+  }
+}
 
-export { getApiLeagueData, getApiLeagueName }
+const getApiLocationData = locationID => {
+  return dispatch => {
+    return axios.get( apiServer + "/leagues/9/locations/" + locationID)
+      .then( response => {
+        dispatch(
+          {
+          type: "API_LOCATION_DATA",
+          location_data: response.data
+          }
+        )
+      }
+    )
+  }
+}
+
+export { getApiLeagueData, getApiLeagueName, getApiTeamData, getApiLocationData }

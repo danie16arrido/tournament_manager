@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import UserNavBar from '../components/UserNavBar';
 import LeagueName from '../components/LeagueName'
 import LeagueLogo from '../components/LeagueLogo'
+
 const UserHeaderContainer = ( props ) => {
 
     return(

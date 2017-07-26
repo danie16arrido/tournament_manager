@@ -16,7 +16,8 @@ const reducer = ( state, action ) => {
   else if(action.type === "API_TEAM_DATA"){
     return {
       ...state,
-      teamData: action.team_data
+      teamName: action.team_name,
+      teamPlayers: action.team_players
     }
   }
 
@@ -30,4 +31,4 @@ const reducer = ( state, action ) => {
   return state;
 }
 
-export default createStore( reducer, { league_matches: [], teamData:{}, locationData: {} }, applyMiddleware( thunk ));
+export default createStore( reducer, { league_matches: [], teamName:"", teamPlayers:[], locationData: {} }, applyMiddleware( thunk ));

@@ -1,6 +1,6 @@
 import axios from 'axios'
 const apiServer = "http://localhost:9100/api/v1"
-const leagueID = 9
+const leagueID = 10
 const getApiLeagueName = leagueID => {
   return dispatch => {
     return axios.get( apiServer + "/leagues/" + leagueID)
@@ -33,12 +33,13 @@ const getApiLeagueData = leagueID => {
 
 const getApiTeamData = teamID => {
   return dispatch => {
-    return axios.get( apiServer + "/teams/" + teamID)
+    return axios.get( apiServer + "/leagues/" + leagueID + "/teams/" + teamID)
       .then( response => {
         dispatch(
           {
           type: "API_TEAM_DATA",
-          team_data: response.data
+          team_name: response.data.name,
+          team_players: response.data.players
           }
         )
       }
